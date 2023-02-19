@@ -1,0 +1,48 @@
+<div class="top-section">
+    <h2>Bookmark Manager</h2>
+    <button class="btn"><a href="#openModal">Add Bookmark</a></button>
+    <div id="openModal" class="modalDialog">
+        <div>	<a href="#close" title="Close" class="close">X</a>
+            <div class="FormContainer">
+                <h2>Add Bookmark</h2>
+                <form class="add-form" [formGroup]="reactiveForm">
+                    <div class="form-control">
+                        <input type='text' placeholder= 'Title' formControlName="title" maxlength="30"  />
+                    </div>
+            
+                    <div class="form-control">
+                        <input type='url' placeholder= 'Url' formControlName="url"/>
+                    </div>
+            
+                    <div class="form-control">
+                        <select  formControlName="category">
+                            <option value = "catA" selected>Category A</option>
+                            <option value = "catB">Category B</option>
+                         </select>
+                    </div>
+
+                    <div class="form-bottom">
+                        <input type='submit' value='Cancel' class="btn"/>
+                        <input type='submit' value='Save' class="btn"  (click)="onSubmit()"/>
+                    </div>
+                
+                    <p class="message"></p>
+                </form>
+            </div>
+               
+        </div>
+    </div>
+</div>
+<div class="bottom-section">
+    <div class="categories" >
+        <div class="category-card" *ngFor="let category of categories">
+            <h4>{{category}}</h4>
+            <div class="category-bookmarks">
+                <app-single-category [category]="category" [bookmarks]="bookmarks"></app-single-category>
+            </div>
+        </div>
+    </div>
+    <div class="bookmark-details">
+        <app-bookmark-details></app-bookmark-details>
+    </div>
+</div>

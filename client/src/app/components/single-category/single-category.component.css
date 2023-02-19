@@ -1,0 +1,15 @@
+.single-category {
+    text-align: left;
+}
+.bookmark-list{
+    display: flex;
+    flex-direction: row;
+}
+/* p {
+    margin-right: auto;
+}
+button {
+    margin-right: 0.5rem;
+    height: 2rem;
+    text-align: right;
+} */

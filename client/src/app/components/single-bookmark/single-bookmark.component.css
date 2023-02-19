@@ -1,0 +1,11 @@
+
+p {
+    display: inline-block;
+    width: 25rem;
+}
+button {
+    margin-right: 0.5rem;
+    margin-left: auto;
+    height: 2rem;
+    text-align: right;
+}

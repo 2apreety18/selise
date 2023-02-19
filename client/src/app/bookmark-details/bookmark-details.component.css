@@ -1,0 +1,10 @@
+.bookmark-details {
+    max-width: 30rem;
+    max-height: 35rem;
+    margin: 1.9rem auto;
+    overflow: auto;
+    border: 1px solid lightgray;
+    padding: 1.9rem;
+    margin-top: 8rem;
+    text-align: left;
+}
