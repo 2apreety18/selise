@@ -18,6 +18,7 @@ export class DashboardComponent {
 
   bookmarks: Bookmark[] = [];
   categories = this.data.getCategories();
+  bookmark: Bookmark;
 
   constructor(private data: BookmarkService) {
     this.data.getAllBookmarks().subscribe(data => {
@@ -38,5 +39,8 @@ export class DashboardComponent {
     this.bookmarks.push(bookmarkRef);
     // this.data.addBookmark(val.title!,val.url!,val.category!).subscribe(()=>{});
     this.reactiveForm.reset();
+  }
+  details(bookmark: Bookmark) {
+    this.bookmark = bookmark;
   }
 }

@@ -11,7 +11,7 @@
                     </div>
             
                     <div class="form-control">
-                        <input type='text' placeholder= 'Url' formControlName="url"/>
+                        <input type='url' placeholder= 'Url' formControlName="url"/>
                     </div>
             
                     <div class="form-control">
@@ -43,6 +43,6 @@
         </div>
     </div>
     <div class="bookmark-details">
-        <app-bookmark-details></app-bookmark-details>
+        <app-bookmark-details [bookmark]="bookmark"></app-bookmark-details>
     </div>
 </div>

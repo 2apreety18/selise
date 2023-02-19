@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Bookmark } from '../interfaces/bookmark';
 import { BookmarkService } from '../services/bookmark.service';
@@ -9,7 +9,9 @@ import { BookmarkService } from '../services/bookmark.service';
   styleUrls: ['./bookmark-details.component.css']
 })
 export class BookmarkDetailsComponent {
-  bookmark!: Bookmark;
+  @Input() bookmark: Bookmark;
+
+  // bookmark!: Bookmark;
   bookmarkId!: number;
   bookmarks: Bookmark[] = [];
 

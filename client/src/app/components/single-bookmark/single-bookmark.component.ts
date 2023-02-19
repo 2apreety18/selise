@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-single-bookmark',
@@ -7,10 +7,12 @@ import { Component, Input } from '@angular/core';
 })
 export class SingleBookmarkComponent {
   @Input() bookmark!: any;
-
+  @Output() detailsE = new EventEmitter;
 
   bookmarkDetails() {
-    
     return `/bookmarks/${this.bookmark.id}`;
+  }
+  details(){
+    this.detailsE.emit(this.bookmark);
   }
 }

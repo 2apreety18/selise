@@ -10,5 +10,6 @@ export class SingleCategoryComponent {
  @Input() bookmarks!: any;
 
  currentCategory: any[] = [];
+ 
 
 }
