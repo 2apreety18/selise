@@ -10,6 +10,7 @@ export class SingleBookmarkComponent {
 
 
   bookmarkDetails() {
+    
     return `/bookmarks/${this.bookmark.id}`;
   }
 }

@@ -13,9 +13,7 @@ export class BookmarkService {
   bookmark!: any;
   categories: any[] = ["Category A","Category B"];
 
-  constructor(private http: HttpClient) {
-    
-  }
+  constructor(private http: HttpClient) {}
 
   getAllBookmarks(): Observable<Bookmark[]> {
     return this.http.get<Bookmark[]>(this.jsonURL);

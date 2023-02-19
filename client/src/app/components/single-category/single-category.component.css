@@ -1,5 +1,6 @@
 .single-category {
     text-align: left;
+    overflow-y: auto;
 }
 .bookmark-list{
     display: flex;

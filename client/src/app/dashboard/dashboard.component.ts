@@ -13,13 +13,8 @@ export class DashboardComponent {
   reactiveForm = new FormGroup({
     title: new FormControl('', Validators.required),
     url: new FormControl('', Validators.required),
-    // email: new FormControl('', [Validators.required, Validators.email]),
     category: new FormControl('', Validators.required)
   });
-
-  onSubmit() {
-    console.log(this.reactiveForm);
-  }
 
   bookmarks: Bookmark[] = [];
   categories = this.data.getCategories();
@@ -29,5 +24,19 @@ export class DashboardComponent {
       console.log(data);
       this.bookmarks = data;
     });
+  }
+
+  onSubmit() {
+    console.log(this.reactiveForm.value);
+    const val = this.reactiveForm.value;
+    const bookmarkRef: Bookmark = {
+      id: Math.floor(Math.random() * 10) + 1,
+      title: val.title,
+      url: val.url,
+      category: val.category
+     };
+    this.bookmarks.push(bookmarkRef);
+    // this.data.addBookmark(val.title!,val.url!,val.category!).subscribe(()=>{});
+    this.reactiveForm.reset();
   }
 }
