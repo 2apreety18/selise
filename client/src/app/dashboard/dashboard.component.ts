@@ -40,6 +40,7 @@ export class DashboardComponent {
     // this.data.addBookmark(val.title!,val.url!,val.category!).subscribe(()=>{});
     this.reactiveForm.reset();
   }
+
   details(bookmark: Bookmark) {
     this.bookmark = bookmark;
   }

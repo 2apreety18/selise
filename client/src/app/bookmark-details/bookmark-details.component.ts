@@ -12,27 +12,27 @@ export class BookmarkDetailsComponent {
   @Input() bookmark: Bookmark;
 
   // bookmark!: Bookmark;
-  bookmarkId!: number;
-  bookmarks: Bookmark[] = [];
+  // bookmarkId!: number;
+  // bookmarks: Bookmark[] = [];
 
 
-  constructor( private route: ActivatedRoute, private data: BookmarkService) { 
-    // this.data.getAllBookmarks().subscribe(data => {
-    //   console.log(data);
-    //   this.bookmarks = data;
-    // });
-    this.getBookmark();
-  }
+  // constructor( private route: ActivatedRoute, private data: BookmarkService) { 
+  //   // this.data.getAllBookmarks().subscribe(data => {
+  //   //   console.log(data);
+  //   //   this.bookmarks = data;
+  //   // });
+  //   this.getBookmark();
+  // }
 
 
-  getBookmark() {
-    this.route.params.subscribe((params: Params) => {
-      const bookmarkId = +params['bookmarkId'];
-      this.data.getBookmarkDetails(this.bookmarkId).subscribe((bookmark: Bookmark) => {
-        if(this.bookmark !== undefined) {
-          this.bookmark = bookmark;
-        }
-      })
-    });
-  }
+  // getBookmark() {
+  //   this.route.params.subscribe((params: Params) => {
+  //     const bookmarkId = +params['bookmarkId'];
+  //     this.data.getBookmarkDetails(this.bookmarkId).subscribe((bookmark: Bookmark) => {
+  //       if(this.bookmark !== undefined) {
+  //         this.bookmark = bookmark;
+  //       }
+  //     })
+  //   });
+  // }
 }

@@ -1,8 +1,10 @@
 
 <div *ngFor="let bookmark of bookmarks" class="single-category">
     <div class="bookmark-list" *ngIf="bookmark.category === category">
-        <!-- <p>{{bookmark.title}}</p>
-        <button [routerLink]="bookmarkDetails()">Details</button> -->
-        <app-single-bookmark [bookmark]="bookmark"></app-single-bookmark>
+            <p>{{bookmark.title}}</p>
+            <button (click)="details(bookmark)">Details</button> 
     </div>
 <div>
+
+
+    

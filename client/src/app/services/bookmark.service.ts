@@ -19,13 +19,13 @@ export class BookmarkService {
     return this.http.get<Bookmark[]>(this.jsonURL);
   }
 
-  getBookmarkDetails(id: number): Observable<Bookmark>{
-    this.getAllBookmarks().subscribe(data => {
-      console.log(data);
-      this.bookmark = data.find(itemInArray => itemInArray.id === id);
-    });
-    return this.bookmark;
-  }
+  // getBookmarkDetails(id: number): Observable<Bookmark>{
+  //   this.getAllBookmarks().subscribe(data => {
+  //     console.log(data);
+  //     this.bookmark = data.find(itemInArray => itemInArray.id === id);
+  //   });
+  //   return this.bookmark;
+  // }
 
   getCategories() {
     return this.categories;

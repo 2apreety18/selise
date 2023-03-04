@@ -38,7 +38,7 @@
         <div class="category-card" *ngFor="let category of categories">
             <h4>{{category}}</h4>
             <div class="category-bookmarks">
-                <app-single-category [category]="category" [bookmarks]="bookmarks"></app-single-category>
+                <app-single-category [category]="category" [bookmarks]="bookmarks" (selectedBookmarkEvent)="details($event)"></app-single-category>
             </div>
         </div>
     </div>
