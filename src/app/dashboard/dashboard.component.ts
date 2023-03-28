@@ -16,9 +16,42 @@ export class DashboardComponent {
     category: new FormControl('', Validators.required)
   });
 
-  bookmarks!: Bookmark[];
+  bookmarks: Bookmark[] = [];
   categories = this.data.getCategories();
   bookmark: Bookmark;
+
+  defaultData = [
+    {  
+        "id": 1,  
+        "title": "Javascript Tutorial",  
+        "url": "www.xyz.com",  
+        "category": "Category A"  
+    },
+    {  
+        "id": 2,  
+        "title": "Angular basics",  
+        "url": "www.xyz.com",  
+        "category": "Category A"  
+    },
+    {  
+        "id": 3,  
+        "title": "React introduction",  
+        "url": "www.xyz.com",  
+        "category": "Category A"  
+    },
+    {  
+        "id": 4,  
+        "title": "Best food in Dhaka To eat with...",  
+        "url": "www.xyz.com",  
+        "category": "Category B"  
+    },
+    {  
+        "id": 5,  
+        "title": "Burger vs Pizza",  
+        "url": "www.xyz.com",  
+        "category": "Category B"  
+    }
+  ]
 
 
   constructor(private data: BookmarkService) {
@@ -27,8 +60,12 @@ export class DashboardComponent {
     //   this.bookmarks = res; 
     // });
 
-    this.bookmarks = this.data.getAllBookmarks();
+    // this.bookmarks = this.data.getAllBookmarks();
+    let storage = this.data.getAllBookmarks();
+    this.bookmarks = this.defaultData.concat(storage);
+    this.bookmarks = [...this.defaultData, ...storage];
   }
+  
 
   onSubmit() {
     console.log(this.reactiveForm.value);

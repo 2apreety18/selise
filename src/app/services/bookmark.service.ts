@@ -42,8 +42,9 @@ export class BookmarkService {
   //     "category": "Category B"  
   // }
   ];
-  bookmark!: any;
-  categories: any[] = ["Category A","Category B"];
+
+  bookmark!: Bookmark;
+  categories: string[] = ["Category A","Category B"];
 
   constructor(private http: HttpClient) {
     this.loadStorageBookmark();
