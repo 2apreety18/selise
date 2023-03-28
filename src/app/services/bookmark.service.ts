@@ -10,38 +10,7 @@ export class BookmarkService {
 
   jsonURL = 'assets/bookmark.json';
   storageName = 'bookmark_list';
-  bookmarks: Bookmark[] = [
-  //   {  
-  //     "id": 1,  
-  //     "title": "Javascript Tutorial",  
-  //     "url": "www.xyz.com",  
-  //     "category": "Category A"  
-  // },
-  // {  
-  //     "id": 2,  
-  //     "title": "Angular basics",  
-  //     "url": "www.xyz.com",  
-  //     "category": "Category A"  
-  // },
-  // {  
-  //     "id": 3,  
-  //     "title": "React introduction",  
-  //     "url": "www.xyz.com",  
-  //     "category": "Category A"  
-  // },
-  // {  
-  //     "id": 4,  
-  //     "title": "Best food in Dhaka To eat with...",  
-  //     "url": "www.xyz.com",  
-  //     "category": "Category B"  
-  // },
-  // {  
-  //     "id": 5,  
-  //     "title": "Burger vs Pizza",  
-  //     "url": "www.xyz.com",  
-  //     "category": "Category B"  
-  // }
-  ];
+  bookmarks: Bookmark[];
 
   bookmark!: Bookmark;
   categories: string[] = ["Category A","Category B"];

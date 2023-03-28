@@ -7,7 +7,7 @@
                 <h2>Add Bookmark</h2>
                 <form class="add-form" [formGroup]="reactiveForm">
                     <div class="form-control">
-                        <input type='text' placeholder= 'Title' formControlName="title" maxlength="30"  />
+                        <input type='text' placeholder= 'Title' formControlName="title" />
                     </div>
             
                     <div class="form-control">
@@ -16,9 +16,13 @@
             
                     <div class="form-control">
                         <select  formControlName="category">
-                            <option value = "Category A" selected>Category A</option>
-                            <option value = "Category B">Category B</option>
+                            <!-- <option value = "Category A" selected>Category A</option> -->
+                            <option *ngFor="let category of allCategories" value = {{category}}>{{category}}</option>
                          </select>
+                    </div>
+
+                    <div class="form-control">
+                        <input type='text' placeholder= 'Add new category' formControlName="newCategory"/>
                     </div>
 
                     <div class="form-bottom">
@@ -35,7 +39,7 @@
 </div>
 <div class="bottom-section">
     <div class="categories" >
-        <div class="category-card" *ngFor="let category of categories">
+        <div class="category-card" *ngFor="let category of allCategories">
             <h4>{{category}}</h4>
             <div class="category-bookmarks">
                 <app-single-category [category]="category" [bookmarks]="bookmarks" (selectedBookmarkEvent)="details($event)"></app-single-category>
