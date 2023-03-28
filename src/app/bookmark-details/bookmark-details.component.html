@@ -1,5 +1,14 @@
-<div class="bookmark-details">
+<div class="bookmark-details" *ngIf="bookmark else defaultBookmark" >
+
     <p>Title: {{bookmark.title}}</p>
     <p>URL: {{bookmark.url}}</p>
     <p>Category: {{bookmark.category}}</p>
 </div>
+
+<ng-template #defaultBookmark>
+    <div class="bookmark-details" >
+        <p>Title: Default Details</p>
+        <p>URL: details.com</p>
+        <p>Category: preffered category</p>
+    </div>
+</ng-template>
