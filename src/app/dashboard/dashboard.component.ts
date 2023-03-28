@@ -28,8 +28,6 @@ export class DashboardComponent {
     // });
 
     this.bookmarks = this.data.getAllBookmarks();
-
-    this.bookmarks = this.data.loadStorageBookmark();
   }
 
   onSubmit() {
@@ -43,7 +41,7 @@ export class DashboardComponent {
      };
     // this.bookmarks.push(bookmarkRef);
     this.data.addBookmark(bookmarkRef);
-
+    this.reactiveForm.reset();
 
     // this.data.addBookmark(val.title!,val.url!,val.category!).subscribe(()=>{});
     // this.data.addBookmark(bookmarkRef);

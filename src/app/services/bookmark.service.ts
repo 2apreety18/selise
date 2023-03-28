@@ -61,7 +61,7 @@ export class BookmarkService {
   }
 
   loadStorageBookmark(){
-    return JSON.parse(localStorage.getItem(this.storageName));
+    this.bookmarks = JSON.parse(localStorage.getItem(this.storageName));
   }
 
   // getBookmarkDetails(id: number): Observable<Bookmark>{
